@@ -3,197 +3,262 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anja Hesse-Grunert – Strategie, PR &amp; Kommunikation</title>
-  <meta name="description" content="Anja Hesse-Grunert, GRUNERT PR Leipzig: 30 Jahre Erfahrung in Marketing, PR und Kommunikation. Strategie mit Gespür für Unternehmerinnen und Unternehmen.">
+  <title>Anja Hesse-Grunert – Strategie, PR &amp; Kommunikation in Leipzig</title>
+  <meta name="description" content="Anja Hesse-Grunert, GRUNERT PR: 30 Jahre Erfahrung in Marketing, PR und Kommunikation. Strategie mit Gespür für Unternehmerinnen und Unternehmen im Raum Leipzig.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbf7f4;
+      --bg: #f7f5f0;
       --surface: #ffffff;
-      --surface-alt: #f3ebe5;
-      --text: #2a2226;
-      --muted: #6b5d63;
-      --accent: #b0466a;
-      --accent-strong: #8e3253;
-      --accent-soft: #f6dfe7;
-      --line: #e7dcd5;
-      --radius: 18px;
-      --max: 1120px;
+      --ink: #14141a;
+      --muted: #5d5d66;
+      --line: #e3e0d8;
+      --coral: #ff5b3a;
+      --coral-ink: #d93f1f;
+      --mint: #c6f0d8;
+      --lilac: #e4dcff;
+      --sun: #ffe17a;
+      --on-dark: #f7f5f0;
+      --radius: 24px;
+      --max: 1200px;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --bg: #1b1618;
-        --surface: #241d20;
-        --surface-alt: #2c2427;
-        --text: #f3eaee;
-        --muted: #b7a8ae;
-        --accent: #e07fa0;
-        --accent-strong: #f0a2bd;
-        --accent-soft: #3a2730;
-        --line: #3a2f33;
+        --bg: #111116;
+        --surface: #1b1b22;
+        --ink: #f3f1ec;
+        --muted: #a4a3ad;
+        --line: #2c2c35;
+        --coral: #ff7356;
+        --coral-ink: #ff8f77;
+        --mint: #1f3b2d;
+        --lilac: #2c2546;
+        --sun: #3d3415;
+        --on-dark: #f3f1ec;
       }
     }
 
     * { box-sizing: border-box; }
+    main { overflow-x: clip; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Inter", system-ui, sans-serif;
-      font-size: 17px;
-      line-height: 1.65;
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif; font-size: 17px; line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.15; margin: 0 0 .5em; text-wrap: balance; }
-    h1 { font-size: clamp(2.3rem, 5.5vw, 4rem); letter-spacing: -0.02em; }
-    h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.01em; }
-    h3 { font-size: 1.3rem; }
+    h1, h2, h3 { font-family: "Bricolage Grotesque", "Inter", sans-serif; line-height: 1.02; margin: 0 0 .45em; letter-spacing: -0.03em; text-wrap: balance; }
+    h1 { font-size: clamp(2.8rem, 8vw, 6.4rem); font-weight: 800; }
+    h2 { font-size: clamp(2.1rem, 5vw, 3.8rem); font-weight: 800; }
+    h3 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
     p { margin: 0 0 1em; }
-    a { color: var(--accent); }
+    a { color: inherit; }
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-    section { padding: 96px 0; }
-    .eyebrow { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
-    .lead { font-size: 1.2rem; color: var(--muted); max-width: 40ch; }
+    section { padding: 112px 0; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .82rem; font-weight: 600; padding: 7px 14px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--surface); margin-bottom: 22px;
+    }
+    .tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+    .lead { font-size: 1.2rem; color: var(--muted); max-width: 46ch; }
 
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 26px; border-radius: 999px;
-      font-weight: 600; text-decoration: none; font-size: 1rem;
-      transition: background .2s, transform .2s, border-color .2s;
-      border: 2px solid transparent; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 999px;
+      font-weight: 600; text-decoration: none; font-size: 1rem; border: 2px solid transparent; cursor: pointer;
+      transition: transform .2s cubic-bezier(.2,.8,.2,1), background .2s, color .2s, border-color .2s;
     }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-strong); transform: translateY(-1px); }
-    .btn-ghost { border-color: var(--line); color: var(--text); }
-    .btn-ghost:hover { border-color: var(--accent); }
-    .btn:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0) scale(.98); }
+    .btn-coral { background: var(--coral); color: #fff; }
+    .btn-coral:hover { background: var(--coral-ink); }
+    .btn-line { border-color: var(--ink); color: var(--ink); }
+    .btn-line:hover { background: var(--ink); color: var(--bg); }
+    .btn .arrow { transition: transform .2s; }
+    .btn:hover .arrow { transform: translateX(4px); }
+    :focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
 
     /* Header */
-    header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .logo { font-family: "Fraunces", serif; font-size: 1.35rem; font-weight: 600; color: var(--text); text-decoration: none; }
-    .logo span { color: var(--accent); }
-    .nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
-    .nav ul a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .95rem; }
-    .nav ul a:hover { color: var(--text); }
-    .nav .btn { padding: 10px 20px; font-size: .9rem; }
-    @media (max-width: 860px) { .nav ul { display: none; } }
+    header { position: sticky; top: 0; z-index: 20; padding: 14px 0; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      background: color-mix(in srgb, var(--surface) 82%, transparent); backdrop-filter: blur(14px);
+      border: 1px solid var(--line); border-radius: 999px; padding: 8px 8px 8px 24px;
+    }
+    .logo { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: -0.02em; white-space: nowrap; }
+    .logo span { color: var(--coral); }
+    .nav ul { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+    .nav ul a { display: block; padding: 8px 14px; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: .93rem; color: var(--muted); transition: background .2s, color .2s; }
+    .nav ul a:hover { background: var(--bg); color: var(--ink); }
+    .nav .btn { padding: 11px 20px; font-size: .92rem; }
+    @media (max-width: 900px) { .nav ul { display: none; } }
+    @media (max-width: 440px) { .nav .btn { padding: 10px 14px; font-size: .85rem; } .logo { font-size: 1.02rem; } }
 
     /* Hero */
-    .hero { padding: 88px 0 96px; }
-    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; }
-    .hero h1 em { font-style: italic; color: var(--accent); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
-    .hero-card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 28px;
-      padding: 36px; position: relative;
-      box-shadow: 0 30px 60px -30px rgba(80, 30, 50, .25);
-    }
-    .avatar {
-      width: 96px; height: 96px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #e8a77f);
-      display: grid; place-items: center; color: #fff;
-      font-family: "Fraunces", serif; font-size: 2rem; margin-bottom: 20px;
-    }
-    .hero-card ul { list-style: none; padding: 0; margin: 20px 0 0; }
-    .hero-card li { padding: 12px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; font-size: .95rem; }
-    .hero-card li strong { font-family: "Fraunces", serif; font-size: 1.25rem; color: var(--accent); }
-    @media (max-width: 860px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      section { padding: 72px 0; }
-    }
+    .hero { padding: 72px 0 56px; position: relative; }
+    .hero h1 .hl { position: relative; white-space: nowrap; color: var(--coral); }
+    .hero h1 .hl svg { position: absolute; left: -2%; bottom: -0.12em; width: 104%; height: .32em; }
+    .hero-bottom { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: end; margin-top: 36px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .fact { border-radius: 20px; padding: 20px 18px; }
+    .fact strong { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; }
+    .fact span { font-size: .85rem; color: var(--muted); line-height: 1.35; display: block; }
+    .f1 { background: var(--mint); } .f2 { background: var(--lilac); } .f3 { background: var(--sun); }
+    .blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); }
+    .blob.a { width: 380px; height: 380px; background: var(--coral); top: -60px; right: -80px; opacity: .22; }
+    .blob.b { width: 300px; height: 300px; background: #7c5cff; top: 260px; right: 220px; opacity: .14; }
+    @media (max-width: 900px) { .hero-bottom { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .facts { grid-template-columns: 1fr; } .fact strong { font-size: 1.7rem; } }
+
+    /* Marquee */
+    .marquee { background: var(--ink); color: var(--bg); padding: 22px 0; overflow: hidden; transform: rotate(-1.2deg); margin: 24px -20px 0; }
+    .marquee-track { display: flex; gap: 40px; width: max-content; animation: scroll 38s linear infinite; }
+    .marquee span { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.6rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 40px; }
+    .marquee span::after { content: "✦"; color: var(--coral); font-size: 1.1rem; }
+    @keyframes scroll { to { transform: translateX(-50%); } }
 
     /* Für wen */
-    .alt { background: var(--surface-alt); }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .checklist { list-style: none; padding: 0; margin: 0; }
-    .checklist li { position: relative; padding: 14px 0 14px 40px; border-bottom: 1px solid var(--line); }
-    .checklist li::before {
-      content: ""; position: absolute; left: 0; top: 17px; width: 24px; height: 24px; border-radius: 50%;
-      background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b0466a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/14px no-repeat;
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .pains { display: grid; gap: 12px; }
+    .pain {
+      display: flex; gap: 16px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line);
+      border-radius: 18px; padding: 18px 20px; transition: transform .25s, border-color .25s;
     }
-    @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; gap: 32px; } }
+    .pain:hover { transform: translateX(6px); border-color: var(--coral); }
+    .pain i { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--coral); color: #fff; display: grid; place-items: center; font-style: normal; font-size: .75rem; font-weight: 700; margin-top: 1px; }
+    @media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 36px; } section { padding: 84px 0; } }
 
-    /* Leistungen */
-    .section-head { max-width: 640px; margin-bottom: 48px; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; transition: transform .2s, box-shadow .2s; }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -24px rgba(80, 30, 50, .3); }
-    .card .num { font-family: "Fraunces", serif; color: var(--accent); font-size: 1rem; margin-bottom: 18px; display: block; }
-    .card p { color: var(--muted); margin: 0; }
-    @media (max-width: 960px) { .cards { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } }
+    /* Leistungen – Bento */
+    .head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
+    .head .lead { margin: 0; }
+    .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+    .tile {
+      grid-column: span 2; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 30px; display: flex; flex-direction: column; min-height: 250px; position: relative; overflow: hidden;
+      transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+    }
+    .tile:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -28px rgba(20,20,26,.35); }
+    .tile .ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; margin-bottom: auto; }
+    .tile .ico svg { width: 26px; height: 26px; stroke: var(--ink); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .tile h3 { margin-top: 28px; }
+    .tile p { color: var(--muted); margin: 0; font-size: .97rem; }
+    .tile.wide { grid-column: span 3; }
+    .tile.dark { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .tile.dark p { color: color-mix(in srgb, var(--bg) 72%, transparent); }
+    .tile.dark .ico svg { stroke: #14141a; }
+    .tile.coral { background: var(--coral); color: #fff; border-color: var(--coral); }
+    .tile.coral p { color: rgba(255,255,255,.88); }
+    .tile.coral .ico svg { stroke: #fff; }
+    .bg-mint { background: var(--mint); } .bg-lilac { background: var(--lilac); } .bg-sun { background: #ffe17a; } .bg-white { background: rgba(255,255,255,.22); }
+    @media (max-width: 960px) { .bento { grid-template-columns: 1fr 1fr; } .tile, .tile.wide { grid-column: span 1; } }
+    @media (max-width: 600px) { .bento { grid-template-columns: 1fr; } .tile { min-height: 0; } }
 
-    /* Prozess */
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
-    .step { counter-increment: step; padding-top: 20px; border-top: 2px solid var(--accent); }
-    .step::before { content: "0" counter(step); font-family: "Fraunces", serif; font-size: 2rem; color: var(--accent); display: block; margin-bottom: 8px; }
+    /* Ablauf */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { border-radius: var(--radius); padding: 28px; background: var(--surface); border: 1px solid var(--line); }
+    .step b { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--bg); font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; margin-bottom: 26px; }
     .step p { color: var(--muted); font-size: .95rem; margin: 0; }
-    @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 
-    /* Stimmen */
-    .quotes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    blockquote { margin: 0; background: var(--surface); border-radius: var(--radius); padding: 36px; border: 1px solid var(--line); }
-    blockquote p { font-family: "Fraunces", serif; font-size: 1.2rem; line-height: 1.5; }
-    blockquote footer { color: var(--muted); font-size: .9rem; }
-    blockquote footer strong { color: var(--text); }
-    @media (max-width: 760px) { .quotes { grid-template-columns: 1fr; } }
+    /* Über mich (immer dunkel) */
+    .about { background: #14141a; color: #f7f5f0; border-radius: 40px; margin: 0 16px; }
+    .about p { color: rgba(247,245,240,.74); }
+    .about h2 { color: #f7f5f0; }
+    .about .tag { background: transparent; border-color: rgba(247,245,240,.25); color: #f7f5f0; }
+    .big-num { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(7rem, 20vw, 15rem); line-height: .8; letter-spacing: -0.06em; color: #ff5b3a; margin: 8px 0 12px; }
+    .cap { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.5rem; font-weight: 700; }
+    .portrait {
+      aspect-ratio: 4 / 5; max-width: 240px; border-radius: 28px; margin-top: 40px;
+      background: linear-gradient(150deg, #ff5b3a, #ffb36b 55%, #ffe17a);
+      display: grid; place-items: center; align-content: center; gap: 4px; color: #fff;
+      font-family: "Bricolage Grotesque", sans-serif; font-size: 4rem; font-weight: 800; transform: rotate(-3deg);
+    }
+    .portrait small { font-family: Inter, sans-serif; font-size: .8rem; font-weight: 500; opacity: .9; }
+    @media (max-width: 600px) { .about { margin: 0 8px; border-radius: 28px; } }
 
+    /* Region */
+    .region { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .map { background: #c6f0d8; border-radius: var(--radius); overflow: hidden; min-height: 340px; position: relative; }
+    .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .chip { padding: 8px 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: .9rem; font-weight: 500; }
+    @media (max-width: 860px) { .region { grid-template-columns: 1fr; } .map { min-height: 280px; } }
+
+    /* Stimmen */
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    blockquote { margin: 0; border-radius: var(--radius); padding: 40px; background: var(--surface); border: 1px solid var(--line); }
+    blockquote:nth-child(2) { background: var(--lilac); border-color: transparent; }
+    blockquote p { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.45rem; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; }
+    blockquote footer { color: var(--muted); font-size: .9rem; }
+    blockquote footer strong { color: var(--ink); }
+    @media (max-width: 760px) { .quotes { grid-template-columns: 1fr; } blockquote { padding: 28px; } }
 
     /* FAQ */
-    details { border-bottom: 1px solid var(--line); padding: 20px 0; }
-    summary { cursor: pointer; font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    details { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px 24px; margin-bottom: 10px; }
+    summary { cursor: pointer; font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; line-height: 1; transition: transform .2s; }
-    details[open] summary::after { transform: rotate(45deg); }
+    summary::after { content: "+"; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font-size: 1.2rem; transition: transform .25s, background .25s, color .25s; }
+    details[open] summary::after { transform: rotate(45deg); background: var(--coral); color: #fff; }
     details p { color: var(--muted); margin: 12px 0 0; }
 
     /* Kontakt */
-    .contact { background: var(--text); color: var(--bg); }
-    .contact h2 { color: var(--bg); }
-    .contact .lead { color: color-mix(in srgb, var(--bg) 75%, transparent); }
-    form { display: grid; gap: 16px; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    label { display: block; font-size: .85rem; font-weight: 500; margin-bottom: 6px; }
+    .contact-box { background: #ff5b3a; color: #fff; border-radius: 40px; padding: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .contact-box h2 { color: #fff; }
+    .contact-box .lead { color: rgba(255,255,255,.9); }
+    .contact-box .tag { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.35); color: #fff; }
+    .contact-box .tag .dot { background: #fff; }
+    form { display: grid; gap: 14px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 6px; }
     input, textarea, select {
-      width: 100%; padding: 14px 16px; border-radius: 12px; font: inherit; font-size: 1rem;
-      border: 1px solid color-mix(in srgb, var(--bg) 25%, transparent);
-      background: color-mix(in srgb, var(--bg) 8%, transparent); color: var(--bg);
+      width: 100%; padding: 14px 16px; border-radius: 14px; font: inherit; font-size: 1rem;
+      border: 2px solid transparent; background: #fff; color: #14141a; transition: border-color .2s;
     }
-    select option { color: #2a2226; }
-    textarea { min-height: 130px; resize: vertical; }
-    .form-note { font-size: .85rem; opacity: .7; margin: 0; }
-    .success { display: none; padding: 16px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 500; }
-    @media (max-width: 620px) { .row { grid-template-columns: 1fr; } }
+    input:focus, textarea:focus, select:focus { border-color: #14141a; outline: none; }
+    textarea { min-height: 120px; resize: vertical; }
+    .contact-box .btn { background: #14141a; color: #fff; justify-self: start; }
+    .contact-box .btn:hover { background: #000; }
+    .contact-box :focus-visible { outline-color: #14141a; }
+    .form-note { font-size: .82rem; opacity: .9; margin: 0; }
+    .success { display: none; padding: 16px; border-radius: 14px; background: #14141a; color: #fff; font-weight: 500; }
+    .contact-meta { margin-top: 28px; display: grid; gap: 6px; font-weight: 500; }
+    @media (max-width: 900px) { .contact-box { grid-template-columns: 1fr; padding: 36px 24px; border-radius: 28px; gap: 32px; } .row { grid-template-columns: 1fr; } }
 
-    footer.site { padding: 32px 0; font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); }
+    footer.site { padding: 40px 0; font-size: .9rem; color: var(--muted); }
     footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    footer.site a { color: var(--muted); text-decoration: none; margin-left: 20px; }
+    footer.site a { text-decoration: none; margin-left: 20px; }
+    footer.site a:hover { color: var(--ink); }
 
+    /* Einblenden beim Scrollen */
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+    .js .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; scroll-behavior: auto !important; }
+      *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+      .js .reveal { opacity: 1; transform: none; }
     }
   </style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="logo" href="#top">Anja Hesse-Grunert<span>.</span></a>
-    <nav aria-label="Hauptnavigation">
-      <ul>
-        <li><a href="#fuer-wen">Für wen</a></li>
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#ueber-mich">Über mich</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-primary" href="#kontakt">Erstgespräch</a>
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="#top">Anja Hesse-Grunert<span>.</span></a>
+      <nav aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ablauf">Ablauf</a></li>
+          <li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#region">Region</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-coral" href="#kontakt">Kontakt</a>
+    </div>
   </div>
 </header>
 
@@ -201,165 +266,240 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">GRUNERT PR · Strategie, PR &amp; Kommunikation</span>
-        <h1>Die richtige Strategie ist eine Frage von <em>Erfahrung</em> – und Gespür.</h1>
-        <p class="lead">Seit 30 Jahren begleite ich Unternehmen in Marketing und Kommunikation. Heute arbeite ich als Freelancerin am liebsten mit Unternehmerinnen, die wissen, was sie können – und eine Partnerin suchen, die ihre Botschaft auf den Punkt bringt.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch →</a>
-          <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
+    <div class="blob a" aria-hidden="true"></div>
+    <div class="blob b" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="tag"><span class="dot"></span>GRUNERT PR · Strategie, PR &amp; Kommunikation in Leipzig</span>
+      <h1>Strategie mit Erfahrung.<br>Und mit <span class="hl">Gespür.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 50 4, 120 4, 198 12" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span></h1>
+      <div class="hero-bottom">
+        <div>
+          <p class="lead">Seit 30 Jahren bringe ich Unternehmen in Marketing und Kommunikation nach vorn. Heute arbeite ich als Freelancerin im Raum Leipzig – am liebsten mit Unternehmerinnen, die eine Partnerin suchen, die zuhört, mitdenkt und anpackt.</p>
+          <div class="hero-actions">
+            <a class="btn btn-coral" href="#kontakt">Kostenloses Erstgespräch <span class="arrow">→</span></a>
+            <a class="btn btn-line" href="#leistungen">Leistungen</a>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact f1"><strong>30</strong><span>Jahre Erfahrung in Marketing &amp; PR</span></div>
+          <div class="fact f2"><strong>LE</strong><span>Leipzig &amp; Umgebung</span></div>
+          <div class="fact f3"><strong>1:1</strong><span>Persönlich und vor Ort</span></div>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Kurzprofil">
-        <div class="avatar" aria-hidden="true">AH</div>
-        <h3>Hallo, ich bin Anja.</h3>
-        <p style="color:var(--muted);margin:0">Freelancerin für Marketing-Strategie und PR aus Leipzig. Ich höre genau hin, erkenne, was ein Unternehmen ausmacht – und finde den Weg, der wirklich passt.</p>
-        <ul>
-          <li><span>Erfahrung in Marketing &amp; PR</span><strong>30 Jahre</strong></li>
-          <li><span>Sitz</span><strong>Leipzig</strong></li>
-          <li><span>Arbeitsgebiet</span><strong>DACH</strong></li>
-        </ul>
-      </aside>
     </div>
   </section>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Marketing-Strategie</span><span>Pressearbeit</span><span>Social Media</span><span>Influencer-Relations</span><span>Workshops</span><span>Kommunikation</span><span>Positionierung</span>
+      <span>Marketing-Strategie</span><span>Pressearbeit</span><span>Social Media</span><span>Influencer-Relations</span><span>Workshops</span><span>Kommunikation</span><span>Positionierung</span>
+    </div>
+  </div>
+
   <!-- Für wen -->
-  <section id="fuer-wen" class="alt">
-    <div class="wrap two-col">
-      <div>
-        <span class="eyebrow">Für wen ich arbeite</span>
+  <section id="fuer-wen">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="tag"><span class="dot"></span>Für wen</span>
         <h2>Für Unternehmerinnen, die gesehen werden wollen.</h2>
-        <p class="lead">Ob Inhaberin eines Mittelständlers, Gründerin, Beraterin oder Händlerin – du hast ein starkes Angebot. Was fehlt, ist eine Strategie, die zu dir und deinem Unternehmen passt.</p>
+        <p class="lead">Ob Inhaberin eines Mittelständlers, Gründerin, Beraterin oder Händlerin in Leipzig: Du hast ein starkes Angebot. Was fehlt, ist die Strategie, die wirklich zu dir passt.</p>
       </div>
-      <ul class="checklist">
-        <li>Du weißt, was du kannst – aber nicht, wie du es auf den Punkt bringst.</li>
-        <li>Du postest regelmäßig, doch es kommen kaum echte Anfragen.</li>
-        <li>Du willst sichtbar werden, ohne dich zu verbiegen oder laut sein zu müssen.</li>
-        <li>Du suchst eine erfahrene Partnerin auf Augenhöhe statt einer anonymen Agentur.</li>
-        <li>Du willst die Presse, Bloggerinnen und Influencer für dich gewinnen.</li>
-      </ul>
+      <div class="pains reveal">
+        <div class="pain"><i>01</i><span>Du weißt, was du kannst – aber nicht, wie du es auf den Punkt bringst.</span></div>
+        <div class="pain"><i>02</i><span>Du postest regelmäßig, doch es kommen kaum echte Anfragen.</span></div>
+        <div class="pain"><i>03</i><span>Du willst sichtbar werden, ohne dich zu verbiegen.</span></div>
+        <div class="pain"><i>04</i><span>Du suchst eine erfahrene Partnerin auf Augenhöhe statt einer anonymen Agentur.</span></div>
+        <div class="pain"><i>05</i><span>Du willst Presse, Bloggerinnen und Influencer für dich gewinnen.</span></div>
+      </div>
     </div>
   </section>
 
   <!-- Leistungen -->
-  <section id="leistungen">
+  <section id="leistungen" style="padding-top:0">
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Leistungen</span>
-        <h2>Strategie mit Gespür – Umsetzung mit Erfahrung.</h2>
-        <p class="lead">Ich berate und setze um. Du bekommst genau das, was dein Unternehmen gerade braucht.</p>
+      <div class="head reveal">
+        <div>
+          <span class="tag"><span class="dot"></span>Leistungen</span>
+          <h2>Was ich für dich tue.</h2>
+        </div>
+        <p class="lead">Ich berate und setze um – du bekommst genau das, was dein Unternehmen gerade braucht.</p>
       </div>
-      <div class="cards">
-        <article class="card"><span class="num">01</span><h3>Marketing- &amp; Kommunikationsstrategie</h3><p>Wo stehst du, wer sind deine Kundinnen und Kunden, was ist deine Botschaft? Ich entwickle mit dir die Strategie, die zu deinem Unternehmen passt.</p></article>
-        <article class="card"><span class="num">02</span><h3>Pressearbeit &amp; PR</h3><p>Pressemitteilungen, Medienkontakte und Themen, die Redaktionen interessieren – damit über dich gesprochen wird.</p></article>
-        <article class="card"><span class="num">03</span><h3>Online-Kommunikation &amp; Social Media</h3><p>Analyse deiner Kanäle und deiner Wettbewerber, Redaktionsplan, Bildsprache und Hashtag-Recherche.</p></article>
-        <article class="card"><span class="num">04</span><h3>Influencer- &amp; Blogger-Relations</h3><p>Ich bringe dich mit passenden Bloggerinnen und Influencern zusammen – über ein gewachsenes Netzwerk in der Lifestyle-Szene.</p></article>
-        <article class="card"><span class="num">05</span><h3>Workshops</h3><p>Für dich und dein Team: Kommunikation, Social Media und PR so vermitteln, dass ihr sie selbst umsetzen könnt.</p></article>
-        <article class="card"><span class="num">06</span><h3>Sparring &amp; Beratung</h3><p>Eine erfahrene zweite Meinung für wichtige Entscheidungen – ehrlich, klar und mit Blick fürs Ganze.</p></article>
+      <div class="bento">
+        <article class="tile wide dark reveal">
+          <div class="ico bg-sun"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <h3>Marketing- &amp; Kommunikations&shy;strategie</h3>
+          <p>Wo stehst du, wer sind deine Kundinnen und Kunden, was ist deine Botschaft? Ich entwickle mit dir die Strategie, die zu deinem Unternehmen passt – mit 30 Jahren Erfahrung und dem Gespür für das Wesentliche.</p>
+        </article>
+        <article class="tile wide reveal">
+          <div class="ico bg-lilac"><svg viewBox="0 0 24 24"><path d="M4 4h12v16H6a2 2 0 0 1-2-2z"/><path d="M16 8h4v10a2 2 0 0 1-2 2h-2"/><path d="M8 8h4M8 12h4M8 16h4"/></svg></div>
+          <h3>Pressearbeit &amp; PR</h3>
+          <p>Pressemitteilungen, Medienkontakte und Themen, die Redaktionen interessieren – damit in Leipzig und darüber hinaus über dich gesprochen wird.</p>
+        </article>
+        <article class="tile reveal">
+          <div class="ico bg-mint"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg></div>
+          <h3>Social Media</h3>
+          <p>Analyse deiner Kanäle und Wettbewerber, Redaktionsplan, Bildsprache und Hashtag-Recherche.</p>
+        </article>
+        <article class="tile coral reveal">
+          <div class="ico bg-white"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4 3-4s4 1.8 4 4"/></svg></div>
+          <h3>Influencer- &amp; Blogger-Relations</h3>
+          <p>Passende Kooperationen über ein gewachsenes Netzwerk in der Lifestyle-Szene.</p>
+        </article>
+        <article class="tile reveal">
+          <div class="ico bg-sun"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Workshops</h3>
+          <p>Für dich und dein Team: Kommunikation, Social Media und PR so vermitteln, dass ihr selbst loslegen könnt.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Ablauf -->
-  <section id="ablauf" class="alt">
+  <section id="ablauf" style="padding-top:0">
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">So arbeiten wir zusammen</span>
-        <h2>Klarer Ablauf, keine Überraschungen.</h2>
+      <div class="head reveal">
+        <div>
+          <span class="tag"><span class="dot"></span>Ablauf</span>
+          <h2>So arbeiten wir zusammen.</h2>
+        </div>
+        <p class="lead">Klar, persönlich und ohne Überraschungen.</p>
       </div>
       <div class="steps">
-        <div class="step"><h3>Kennenlernen</h3><p>30 Minuten kostenlos per Video: Wo stehst du, wo willst du hin?</p></div>
-        <div class="step"><h3>Analyse</h3><p>Ich analysiere deinen Auftritt, deine Kanäle und deine Wettbewerber.</p></div>
-        <div class="step"><h3>Strategie</h3><p>Du erhältst einen konkreten Vorschlag – z. B. mit Redaktionsplan, Bildsprache oder Workshop.</p></div>
-        <div class="step"><h3>Umsetzung</h3><p>Gemeinsam oder für dich – mit regelmäßigem Reporting.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stimmen -->
-  <section id="stimmen">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Stimmen</span>
-        <h2>Was Kundinnen sagen</h2>
-      </div>
-      <div class="quotes">
-        <blockquote>
-          <p>„[Hier ein echtes Zitat einer Kundin einfügen.]“</p>
-          <footer><strong>[Name der Kundin]</strong> · [Unternehmen]</footer>
-        </blockquote>
-        <blockquote>
-          <p>„[Hier ein zweites echtes Zitat einfügen.]“</p>
-          <footer><strong>[Name der Kundin]</strong> · [Unternehmen]</footer>
-        </blockquote>
+        <div class="step reveal"><b>1</b><h3>Kennenlernen</h3><p>Ein kostenloses Gespräch – gern bei einem Kaffee in Leipzig oder per Video.</p></div>
+        <div class="step reveal"><b>2</b><h3>Analyse</h3><p>Ich schaue mir deinen Auftritt, deine Kanäle und deine Wettbewerber genau an.</p></div>
+        <div class="step reveal"><b>3</b><h3>Strategie</h3><p>Du bekommst einen konkreten Vorschlag, z. B. mit Redaktionsplan, Bildsprache oder Workshop.</p></div>
+        <div class="step reveal"><b>4</b><h3>Umsetzung</h3><p>Gemeinsam oder für dich – mit regelmäßigem Austausch.</p></div>
       </div>
     </div>
   </section>
 
   <!-- Über mich -->
-  <section id="ueber-mich" class="alt">
-    <div class="wrap two-col">
-      <div>
-        <span class="eyebrow">Über mich</span>
-        <h2>30 Jahre Erfahrung. Und ein feines Gespür für das, was passt.</h2>
+  <section id="ueber-mich" class="about">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="tag"><span class="dot"></span>Über mich</span>
+        <div class="big-num">30</div>
+        <div class="cap">Jahre Marketing, PR &amp; Kommunikation.</div>
+        <div class="portrait" role="img" aria-label="Platzhalter für ein Foto von Anja Hesse-Grunert">AH<small>[Foto einfügen]</small></div>
       </div>
-      <div>
+      <div class="reveal">
+        <h2>Ich höre zu, bevor ich berate.</h2>
         <p>Ich bin Anja Hesse-Grunert und arbeite seit drei Jahrzehnten in Marketing, PR und Kommunikation. Ich habe in Agenturen gearbeitet, eine Leipziger PR-Agentur mitgeleitet und begleite heute mit GRUNERT PR Unternehmen als freie Strategin.</p>
-        <p>Was mich ausmacht: Ich höre zu, bevor ich berate. Gute Strategie entsteht nicht aus Schablonen, sondern aus dem Verständnis für ein Unternehmen, die Menschen dahinter und den Markt. Dieses Gespür ist über 30 Jahre gewachsen – und davon profitieren meine Kundinnen und Kunden.</p>
+        <p>Gute Strategie entsteht nicht aus Schablonen, sondern aus dem Verständnis für ein Unternehmen, die Menschen dahinter und den Markt. Dieses Gespür ist über 30 Jahre gewachsen – und davon profitieren meine Kundinnen und Kunden.</p>
         <p>Besonders gern arbeite ich mit Frauen, die ein Unternehmen führen oder aufbauen. Sie bekommen bei mir eine Partnerin, die mitdenkt, ehrlich sagt, was funktioniert – und anpackt.</p>
       </div>
     </div>
   </section>
 
+  <!-- Region -->
+  <section id="region">
+    <div class="wrap region">
+      <div class="reveal">
+        <span class="tag"><span class="dot"></span>Region</span>
+        <h2>Zu Hause im Raum Leipzig.</h2>
+        <p class="lead">Ich kenne die Stadt, die Menschen und die regionale Medienlandschaft. Deshalb arbeite ich persönlich und vor Ort – bei dir im Unternehmen, im Café oder im Workshop-Raum.</p>
+        <div class="chips">
+          <span class="chip">Leipzig</span><span class="chip">Markkleeberg</span><span class="chip">Taucha</span><span class="chip">Schkeuditz</span><span class="chip">Markranstädt</span><span class="chip">Borna</span><span class="chip">Grimma</span><span class="chip">Halle (Saale)</span>
+        </div>
+      </div>
+      <div class="map reveal" aria-hidden="true">
+        <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#14141a" stroke-opacity=".12" stroke-width="1.5">
+            <circle cx="200" cy="160" r="50"/><circle cx="200" cy="160" r="100"/><circle cx="200" cy="160" r="150"/><circle cx="200" cy="160" r="200"/>
+          </g>
+          <path d="M-20 215 C 80 175, 140 235, 220 195 S 360 125, 440 155" stroke="#14141a" stroke-opacity=".14" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <g font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#14141a">
+            <circle cx="70" cy="92" r="5"/><text x="80" y="96">Halle</text>
+            <circle cx="132" cy="112" r="4"/><text x="142" y="116">Schkeuditz</text>
+            <circle cx="282" cy="118" r="4"/><text x="292" y="122">Taucha</text>
+            <circle cx="212" cy="232" r="4"/><text x="222" y="236">Markkleeberg</text>
+            <circle cx="128" cy="196" r="4"/><text x="52" y="218">Markranstädt</text>
+            <circle cx="320" cy="210" r="4"/><text x="330" y="214">Grimma</text>
+            <circle cx="232" cy="290" r="4"/><text x="242" y="294">Borna</text>
+          </g>
+          <circle cx="200" cy="160" r="26" fill="#ff5b3a" opacity=".25"/>
+          <circle cx="200" cy="160" r="11" fill="#ff5b3a"/>
+          <text x="200" y="134" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" font-weight="800" fill="#14141a">Leipzig</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stimmen -->
+  <section id="stimmen" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <span class="tag"><span class="dot"></span>Stimmen</span>
+          <h2>Was Kundinnen sagen.</h2>
+        </div>
+      </div>
+      <div class="quotes">
+        <blockquote class="reveal">
+          <p>„[Hier ein echtes Zitat einer Kundin einfügen.]“</p>
+          <footer><strong>[Name der Kundin]</strong> · [Unternehmen, Leipzig]</footer>
+        </blockquote>
+        <blockquote class="reveal">
+          <p>„[Hier ein zweites echtes Zitat einfügen.]“</p>
+          <footer><strong>[Name der Kundin]</strong> · [Unternehmen, Leipzig]</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section id="faq">
-    <div class="wrap two-col">
-      <div>
-        <span class="eyebrow">FAQ</span>
-        <h2>Häufige Fragen</h2>
+  <section id="faq" style="padding-top:0">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="tag"><span class="dot"></span>FAQ</span>
+        <h2>Häufige Fragen.</h2>
         <p class="lead">Deine Frage ist nicht dabei? Schreib mir einfach.</p>
       </div>
-      <div>
+      <div class="reveal">
         <details><summary>Arbeitest du nur mit Frauen?</summary><p>Mein Schwerpunkt liegt auf Unternehmerinnen und Gründerinnen. Ich berate aber auch gern andere Unternehmen – sprich mich einfach an.</p></details>
+        <details><summary>In welcher Region bist du tätig?</summary><p>Ich arbeite im Raum Leipzig, also in Leipzig und Umgebung bis nach Halle. Termine finden persönlich vor Ort statt, kurze Abstimmungen gern auch per Telefon oder Video.</p></details>
         <details><summary>Ich bin noch ganz am Anfang. Passt das trotzdem?</summary><p>Ja! Gerade in der Gründungsphase legt eine klare Strategie den Grundstein für alles Weitere.</p></details>
         <details><summary>Was kostet die Zusammenarbeit?</summary><p>Jedes Projekt ist anders. Nach dem Erstgespräch bekommst du ein transparentes Angebot.</p></details>
-        <details><summary>Wie schnell sehe ich Ergebnisse?</summary><p>Klarheit gibt es sofort, messbare Effekte bei Reichweite und Anfragen meist nach 6–12 Wochen konsequenter Umsetzung.</p></details>
-        <details><summary>Arbeitest du auch remote?</summary><p>Ja. Ich sitze in Leipzig und arbeite persönlich vor Ort oder online – deutschlandweit und im DACH-Raum.</p></details>
+        <details><summary>Wie schnell sehe ich Ergebnisse?</summary><p>Klarheit gibt es sofort. Messbare Effekte bei Reichweite und Anfragen zeigen sich meist nach einigen Wochen konsequenter Umsetzung.</p></details>
       </div>
     </div>
   </section>
 
   <!-- Kontakt -->
-  <section id="kontakt" class="contact">
-    <div class="wrap two-col">
-      <div>
-        <span class="eyebrow">Kontakt</span>
-        <h2>Lass uns über dein Unternehmen sprechen.</h2>
-        <p class="lead">Buche ein kostenloses, unverbindliches Erstgespräch. Ich melde mich innerhalb von 48 Stunden bei dir.</p>
-        <p>GRUNERT PR · Leipzig<br>✉️ <a href="mailto:hallo@example.de" style="color:inherit">[E-Mail-Adresse einfügen]</a></p>
-      </div>
-      <form id="contact-form" novalidate>
-        <div class="row">
-          <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
-          <div><label for="email">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        </div>
-        <div><label for="business">Dein Business</label><input id="business" name="business" placeholder="z. B. Coaching, Onlineshop, Praxis …"></div>
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact-box reveal">
         <div>
-          <label for="interest">Interesse an</label>
-          <select id="interest" name="interest">
-            <option>Strategie &amp; Beratung</option>
-            <option>Pressearbeit &amp; PR</option>
-            <option>Social Media &amp; Influencer</option>
-            <option>Workshop</option>
-            <option>Weiß ich noch nicht</option>
-          </select>
+          <span class="tag"><span class="dot"></span>Kontakt</span>
+          <h2>Lass uns sprechen.</h2>
+          <p class="lead">Ein kostenloses, unverbindliches Erstgespräch – gern persönlich in Leipzig. Ich melde mich innerhalb von 48 Stunden.</p>
+          <div class="contact-meta">
+            <span>GRUNERT PR · Leipzig</span>
+            <a href="mailto:hallo@example.de">✉ [E-Mail-Adresse einfügen]</a>
+            <span>☎ [Telefonnummer einfügen]</span>
+          </div>
         </div>
-        <div><label for="message">Nachricht</label><textarea id="message" name="message" placeholder="Wo stehst du gerade und wobei kann ich helfen?"></textarea></div>
-        <button class="btn btn-primary" type="submit">Nachricht senden</button>
-        <p class="form-note">Mit dem Absenden stimmst du der Verarbeitung deiner Daten gemäß Datenschutzerklärung zu.</p>
-        <div class="success" id="success" role="status">Danke! Deine Nachricht ist angekommen – ich melde mich bald bei dir.</div>
-      </form>
+        <form id="contact-form" novalidate>
+          <div class="row">
+            <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+            <div><label for="email">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div><label for="business">Dein Unternehmen</label><input id="business" name="business" placeholder="z. B. Boutique, Praxis, Beratung …"></div>
+          <div>
+            <label for="interest">Interesse an</label>
+            <select id="interest" name="interest">
+              <option>Strategie &amp; Beratung</option>
+              <option>Pressearbeit &amp; PR</option>
+              <option>Social Media &amp; Influencer</option>
+              <option>Workshop</option>
+              <option>Weiß ich noch nicht</option>
+            </select>
+          </div>
+          <div><label for="message">Nachricht</label><textarea id="message" name="message" placeholder="Wo stehst du gerade und wobei kann ich helfen?"></textarea></div>
+          <button class="btn" type="submit">Nachricht senden <span class="arrow">→</span></button>
+          <p class="form-note">Mit dem Absenden stimmst du der Verarbeitung deiner Daten gemäß Datenschutzerklärung zu.</p>
+          <div class="success" id="success" role="status">Danke! Deine Nachricht ist angekommen – ich melde mich bald bei dir.</div>
+        </form>
+      </div>
     </div>
   </section>
 </main>
@@ -372,7 +512,17 @@
 </footer>
 
 <script>
-  // Platzhalter-Formularlogik – für echten Versand z. B. Formspree, Netlify Forms o. Ä. anbinden.
+  // Sanftes Einblenden beim Scrollen
+  (function () {
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(e => io.observe(e));
+  })();
+
+  // Platzhalter-Formularlogik – für echten Versand z. B. Formspree oder Netlify Forms anbinden.
   document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const name = this.name.value.trim();
