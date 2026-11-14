@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>Anja Hesse-Grunert – Strategie, PR &amp; Kommunikation in Leipzig</title>
   <meta name="description" content="Anja Hesse-Grunert, GRUNERT PR: 30 Jahre Erfahrung in Marketing, PR und Kommunikation. Strategie mit Gespür für Unternehmerinnen und Unternehmen im Raum Leipzig.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -232,6 +233,26 @@
     footer.site a { text-decoration: none; margin-left: 20px; }
     footer.site a:hover { color: var(--ink); }
 
+
+    /* Login-Sperre (Prototyp) */
+    html:not(.authed) body > :not(#gate):not(script) { display: none !important; }
+    html.authed #gate { display: none; }
+    #gate { min-height: 100vh; display: grid; place-items: center; padding: 24px; position: relative; overflow: hidden; }
+    #gate .blob.a { top: -120px; right: -120px; }
+    #gate .blob.b { top: auto; bottom: -80px; right: auto; left: -60px; }
+    .gate-card { width: 100%; max-width: 420px; background: var(--surface); border: 1px solid var(--line); border-radius: 32px; padding: 40px 32px; box-shadow: 0 40px 80px -40px rgba(20,20,26,.35); }
+    .gate-card { display: block; }
+    .gate-card h1 { font-size: 2.4rem; margin-bottom: .3em; }
+    .gate-card h1 span { color: var(--coral); }
+    .gate-card p { color: var(--muted); margin-bottom: 24px; }
+    .gate-card label { color: var(--ink); }
+    .gate-card input { border: 2px solid var(--line); background: var(--bg); color: var(--ink); margin-bottom: 14px; }
+    .gate-card input:focus { border-color: var(--coral); }
+    .gate-card .btn { width: 100%; justify-content: center; }
+    .gate-error { color: var(--coral-ink); font-size: .9rem; font-weight: 500; min-height: 1.4em; margin: 10px 0 0; }
+    .gate-card.shake { animation: shake .4s; }
+    @keyframes shake { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+
     /* Einblenden beim Scrollen */
     .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
     .js .reveal.in { opacity: 1; transform: none; }
@@ -240,9 +261,26 @@
       .js .reveal { opacity: 1; transform: none; }
     }
   </style>
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (sessionStorage.getItem('ahg-auth') === '1') document.documentElement.classList.add('authed'); } catch (e) {}
+  </script>
 </head>
 <body>
+
+<div id="gate">
+  <div class="blob a" aria-hidden="true"></div>
+  <div class="blob b" aria-hidden="true"></div>
+  <form class="gate-card" id="gate-form" autocomplete="off">
+    <span class="tag"><span class="dot"></span>Prototyp · Zugang geschützt</span>
+    <h1>Anja Hesse-Grunert<span>.</span></h1>
+    <p>Diese Seite ist noch in Arbeit. Bitte gib das Passwort ein, um die Vorschau zu sehen.</p>
+    <label for="gate-pw">Passwort</label>
+    <input id="gate-pw" type="password" required autofocus>
+    <button class="btn btn-coral" type="submit">Vorschau öffnen <span class="arrow">→</span></button>
+    <p class="gate-error" id="gate-error" role="alert"></p>
+  </form>
+</div>
 
 <header>
   <div class="wrap">
@@ -507,9 +545,62 @@
 <footer class="site">
   <div class="wrap">
     <span>© 2026 Anja Hesse-Grunert · GRUNERT PR, Leipzig</span>
-    <span><a href="#">Impressum</a><a href="#">Datenschutz</a></span>
+    <span><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#" id="logout">Abmelden</a></span>
   </div>
 </footer>
+
+<script>
+  // Login-Sperre für den Prototyp. Hinweis: Das ist nur ein Sichtschutz, keine echte Sicherheit.
+  // Passwort ändern: SHA-256-Hash des neuen Passworts bei PW_HASH eintragen.
+  const PW_HASH = 'b34f892eebf5742d4b7034163bb7d8c44fd715ab1df1eed37ebe0bb91d720f23';
+
+  function sha256(str) {
+    const K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+    const bytes = new TextEncoder().encode(str);
+    const l = bytes.length, n = ((l + 9 + 63) >> 6) << 6;
+    const m = new Uint8Array(n); m.set(bytes); m[l] = 0x80;
+    const dv = new DataView(m.buffer); dv.setUint32(n - 4, l * 8); dv.setUint32(n - 8, Math.floor(l / 0x20000000));
+    let H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+    const W = new Uint32Array(64), r = (x, k) => (x >>> k) | (x << (32 - k));
+    for (let o = 0; o < n; o += 64) {
+      for (let i = 0; i < 16; i++) W[i] = dv.getUint32(o + i * 4);
+      for (let i = 16; i < 64; i++) {
+        const s0 = r(W[i-15],7) ^ r(W[i-15],18) ^ (W[i-15] >>> 3), s1 = r(W[i-2],17) ^ r(W[i-2],19) ^ (W[i-2] >>> 10);
+        W[i] = (W[i-16] + s0 + W[i-7] + s1) | 0;
+      }
+      let [a,b,c,d,e,f,g,h] = H;
+      for (let i = 0; i < 64; i++) {
+        const t1 = (h + (r(e,6) ^ r(e,11) ^ r(e,25)) + ((e & f) ^ (~e & g)) + K[i] + W[i]) | 0;
+        const t2 = ((r(a,2) ^ r(a,13) ^ r(a,22)) + ((a & b) ^ (a & c) ^ (b & c))) | 0;
+        h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = b; b = a; a = (t1 + t2) | 0;
+      }
+      H = H.map((v, i) => (v + [a,b,c,d,e,f,g,h][i]) | 0);
+    }
+    return H.map(v => (v >>> 0).toString(16).padStart(8, '0')).join('');
+  }
+
+  document.getElementById('gate-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const input = document.getElementById('gate-pw');
+    if (sha256(input.value) === PW_HASH) {
+      try { sessionStorage.setItem('ahg-auth', '1'); } catch (err) {}
+      document.documentElement.classList.add('authed');
+      window.scrollTo(0, 0);
+    } else {
+      document.getElementById('gate-error').textContent = 'Das Passwort stimmt leider nicht.';
+      this.classList.remove('shake'); void this.offsetWidth; this.classList.add('shake');
+      input.select();
+    }
+  });
+
+  document.getElementById('logout').addEventListener('click', function (e) {
+    e.preventDefault();
+    try { sessionStorage.removeItem('ahg-auth'); } catch (err) {}
+    document.documentElement.classList.remove('authed');
+    document.getElementById('gate-pw').value = '';
+    document.getElementById('gate-error').textContent = '';
+  });
+</script>
 
 <script>
   // Sanftes Einblenden beim Scrollen
