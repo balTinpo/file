@@ -24,6 +24,7 @@
       --on-dark: #f7f5f0;
       --radius: 24px;
       --max: 1200px;
+      --hero-grad: linear-gradient(125deg, #ffd9c9 0%, #ffeede 38%, #f6efff 68%, #e2d8ff 100%);
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
@@ -38,6 +39,7 @@
         --lilac: #2c2546;
         --sun: #3d3415;
         --on-dark: #f3f1ec;
+        --hero-grad: linear-gradient(125deg, #3a1d14 0%, #22171a 40%, #1c1a2c 70%, #2a2147 100%);
       }
     }
 
@@ -97,7 +99,7 @@
     @media (max-width: 440px) { .nav .btn { padding: 10px 14px; font-size: .85rem; } .logo { font-size: 1.02rem; } }
 
     /* Hero */
-    .hero { padding: 72px 0 56px; position: relative; }
+    .hero { padding: 168px 0 96px; margin-top: -96px; position: relative; background: linear-gradient(to bottom, transparent 75%, var(--bg)), var(--hero-grad); }
     .hero h1 .hl { position: relative; white-space: nowrap; color: var(--coral); }
     .hero h1 .hl svg { position: absolute; left: -2%; bottom: -0.12em; width: 104%; height: .32em; }
     .hero-bottom { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: end; margin-top: 36px; }
@@ -297,8 +299,6 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="blob a" aria-hidden="true"></div>
-    <div class="blob b" aria-hidden="true"></div>
     <div class="wrap">
       <span class="tag"><span class="dot"></span>GRUNERT PR · Strategie, PR &amp; Kommunikation in Leipzig</span>
       <h1>Strategie mit Erfahrung.<br>Und mit <span class="hl">Gespür.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 50 4, 120 4, 198 12" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span></h1>
