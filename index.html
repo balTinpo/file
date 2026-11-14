@@ -113,13 +113,6 @@
     @media (max-width: 900px) { .hero-bottom { grid-template-columns: 1fr; } }
     @media (max-width: 520px) { .facts { grid-template-columns: 1fr; } .fact strong { font-size: 1.7rem; } }
 
-    /* Marquee */
-    .marquee { background: var(--ink); color: var(--bg); padding: 22px 0; overflow: hidden; transform: rotate(-1.2deg); margin: 24px -20px 0; }
-    .marquee-track { display: flex; gap: 40px; width: max-content; animation: scroll 38s linear infinite; }
-    .marquee span { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.6rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 40px; }
-    .marquee span::after { content: "✦"; color: var(--coral); font-size: 1.1rem; }
-    @keyframes scroll { to { transform: translateX(-50%); } }
-
     /* Für wen */
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
     .pains { display: grid; gap: 12px; }
@@ -325,13 +318,6 @@
       </div>
     </div>
   </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Marketing-Strategie</span><span>Pressearbeit</span><span>Social Media</span><span>Influencer-Relations</span><span>Workshops</span><span>Kommunikation</span><span>Positionierung</span>
-      <span>Marketing-Strategie</span><span>Pressearbeit</span><span>Social Media</span><span>Influencer-Relations</span><span>Workshops</span><span>Kommunikation</span><span>Positionierung</span>
-    </div>
-  </div>
 
   <!-- Für wen -->
   <section id="fuer-wen">
