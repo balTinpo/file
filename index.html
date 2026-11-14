@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lena Berger – Marketing für Unternehmerinnen</title>
+  <meta name="description" content="Strategisches Marketing für Gründerinnen und Unternehmerinnen: Positionierung, Content, Social Media und Kampagnen, die Kundinnen gewinnen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbf7f4;
+      --surface: #ffffff;
+      --surface-alt: #f3ebe5;
+      --text: #2a2226;
+      --muted: #6b5d63;
+      --accent: #b0466a;
+      --accent-strong: #8e3253;
+      --accent-soft: #f6dfe7;
+      --line: #e7dcd5;
+      --radius: 18px;
+      --max: 1120px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #1b1618;
+        --surface: #241d20;
+        --surface-alt: #2c2427;
+        --text: #f3eaee;
+        --muted: #b7a8ae;
+        --accent: #e07fa0;
+        --accent-strong: #f0a2bd;
+        --accent-soft: #3a2730;
+        --line: #3a2f33;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.15; margin: 0 0 .5em; text-wrap: balance; }
+    h1 { font-size: clamp(2.3rem, 5.5vw, 4rem); letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.01em; }
+    h3 { font-size: 1.3rem; }
+    p { margin: 0 0 1em; }
+    a { color: var(--accent); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+    .eyebrow { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .lead { font-size: 1.2rem; color: var(--muted); max-width: 40ch; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 26px; border-radius: 999px;
+      font-weight: 600; text-decoration: none; font-size: 1rem;
+      transition: background .2s, transform .2s, border-color .2s;
+      border: 2px solid transparent; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-strong); transform: translateY(-1px); }
+    .btn-ghost { border-color: var(--line); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .btn:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: "Fraunces", serif; font-size: 1.35rem; font-weight: 600; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .nav ul a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .95rem; }
+    .nav ul a:hover { color: var(--text); }
+    .nav .btn { padding: 10px 20px; font-size: .9rem; }
+    @media (max-width: 860px) { .nav ul { display: none; } }
+
+    /* Hero */
+    .hero { padding: 88px 0 96px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .hero-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 28px;
+      padding: 36px; position: relative;
+      box-shadow: 0 30px 60px -30px rgba(80, 30, 50, .25);
+    }
+    .avatar {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #e8a77f);
+      display: grid; place-items: center; color: #fff;
+      font-family: "Fraunces", serif; font-size: 2rem; margin-bottom: 20px;
+    }
+    .hero-card ul { list-style: none; padding: 0; margin: 20px 0 0; }
+    .hero-card li { padding: 12px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; font-size: .95rem; }
+    .hero-card li strong { font-family: "Fraunces", serif; font-size: 1.25rem; color: var(--accent); }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      section { padding: 72px 0; }
+    }
+
+    /* Für wen */
+    .alt { background: var(--surface-alt); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .checklist { list-style: none; padding: 0; margin: 0; }
+    .checklist li { position: relative; padding: 14px 0 14px 40px; border-bottom: 1px solid var(--line); }
+    .checklist li::before {
+      content: ""; position: absolute; left: 0; top: 17px; width: 24px; height: 24px; border-radius: 50%;
+      background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b0466a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/14px no-repeat;
+    }
+    @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; gap: 32px; } }
+
+    /* Leistungen */
+    .section-head { max-width: 640px; margin-bottom: 48px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -24px rgba(80, 30, 50, .3); }
+    .card .num { font-family: "Fraunces", serif; color: var(--accent); font-size: 1rem; margin-bottom: 18px; display: block; }
+    .card p { color: var(--muted); margin: 0; }
+    @media (max-width: 960px) { .cards { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } }
+
+    /* Prozess */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
+    .step { counter-increment: step; padding-top: 20px; border-top: 2px solid var(--accent); }
+    .step::before { content: "0" counter(step); font-family: "Fraunces", serif; font-size: 2rem; color: var(--accent); display: block; margin-bottom: 8px; }
+    .step p { color: var(--muted); font-size: .95rem; margin: 0; }
+    @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+    /* Stimmen */
+    .quotes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    blockquote { margin: 0; background: var(--surface); border-radius: var(--radius); padding: 36px; border: 1px solid var(--line); }
+    blockquote p { font-family: "Fraunces", serif; font-size: 1.2rem; line-height: 1.5; }
+    blockquote footer { color: var(--muted); font-size: .9rem; }
+    blockquote footer strong { color: var(--text); }
+    @media (max-width: 760px) { .quotes { grid-template-columns: 1fr; } }
+
+    /* Pakete */
+    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+    .plan { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px; display: flex; flex-direction: column; }
+    .plan.featured { border: 2px solid var(--accent); position: relative; }
+    .plan.featured::after { content: "Beliebt"; position: absolute; top: -13px; left: 32px; background: var(--accent); color: #fff; font-size: .75rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; }
+    .price { font-family: "Fraunces", serif; font-size: 2.2rem; margin: 8px 0 4px; }
+    .price small { font-family: "Inter", sans-serif; font-size: .9rem; color: var(--muted); }
+    .plan ul { padding-left: 18px; color: var(--muted); flex: 1; margin: 20px 0 28px; }
+    .plan li { margin-bottom: 8px; }
+    @media (max-width: 900px) { .pricing { grid-template-columns: 1fr; } }
+
+    /* FAQ */
+    details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+    summary { cursor: pointer; font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; line-height: 1; transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { color: var(--muted); margin: 12px 0 0; }
+
+    /* Kontakt */
+    .contact { background: var(--text); color: var(--bg); }
+    .contact h2 { color: var(--bg); }
+    .contact .lead { color: color-mix(in srgb, var(--bg) 75%, transparent); }
+    form { display: grid; gap: 16px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-size: .85rem; font-weight: 500; margin-bottom: 6px; }
+    input, textarea, select {
+      width: 100%; padding: 14px 16px; border-radius: 12px; font: inherit; font-size: 1rem;
+      border: 1px solid color-mix(in srgb, var(--bg) 25%, transparent);
+      background: color-mix(in srgb, var(--bg) 8%, transparent); color: var(--bg);
+    }
+    select option { color: #2a2226; }
+    textarea { min-height: 130px; resize: vertical; }
+    .form-note { font-size: .85rem; opacity: .7; margin: 0; }
+    .success { display: none; padding: 16px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 500; }
+    @media (max-width: 620px) { .row { grid-template-columns: 1fr; } }
+
+    footer.site { padding: 32px 0; font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); }
+    footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer.site a { color: var(--muted); text-decoration: none; margin-left: 20px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Lena Berger<span>.</span></a>
+    <nav aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#fuer-wen">Für wen</a></li>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#pakete">Pakete</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="#kontakt">Erstgespräch</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Marketing für Unternehmerinnen</span>
+        <h1>Dein Business verdient es, <em>gesehen</em> zu werden.</h1>
+        <p class="lead">Ich unterstütze Gründerinnen, Selbstständige und Unternehmerinnen dabei, mit klarer Positionierung und durchdachtem Marketing genau die Kundinnen und Kunden zu gewinnen, die zu ihnen passen.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kontakt">Kostenloses Erstgespräch →</a>
+          <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Kurzprofil">
+        <div class="avatar" aria-hidden="true">LB</div>
+        <h3>Hi, ich bin Lena.</h3>
+        <p style="color:var(--muted);margin:0">Marketing-Strategin mit über 10 Jahren Erfahrung in Agenturen und Start-ups – heute arbeite ich exklusiv mit Frauen, die etwas Eigenes aufbauen.</p>
+        <ul>
+          <li><span>Begleitete Unternehmerinnen</span><strong>80+</strong></li>
+          <li><span>Ø Wachstum Anfragen</span><strong>+140 %</strong></li>
+          <li><span>Weiterempfehlungsrate</span><strong>9 / 10</strong></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Für wen -->
+  <section id="fuer-wen" class="alt">
+    <div class="wrap two-col">
+      <div>
+        <span class="eyebrow">Für wen ich arbeite</span>
+        <h2>Für Frauen, die gründen, wachsen und gestalten.</h2>
+        <p class="lead">Ob Coachin, Beraterin, Designerin, Praxisinhaberin oder Gründerin eines Produkt-Start-ups – du hast ein starkes Angebot, aber das Marketing kostet dich zu viel Zeit und bringt zu wenig.</p>
+      </div>
+      <ul class="checklist">
+        <li>Du weißt, was du kannst – aber nicht, wie du es auf den Punkt bringst.</li>
+        <li>Du postest regelmäßig, doch es kommen kaum echte Anfragen.</li>
+        <li>Du willst sichtbar werden, ohne dich zu verbiegen oder laut sein zu müssen.</li>
+        <li>Du suchst eine Partnerin auf Augenhöhe statt einer anonymen Agentur.</li>
+        <li>Du möchtest deine Preise selbstbewusst kommunizieren.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Leistungen</span>
+        <h2>Marketing, das zu dir passt – und wirkt.</h2>
+        <p class="lead">Von der Strategie bis zur Umsetzung. Du bekommst genau das, was dein Business gerade braucht.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="num">01</span><h3>Positionierung &amp; Markenstrategie</h3><p>Wir schärfen deine Zielgruppe, dein Angebot und deine Botschaft, damit du sofort verstanden wirst.</p></article>
+        <article class="card"><span class="num">02</span><h3>Social Media &amp; Content</h3><p>Redaktionsplan, Content-Formate und Texte für Instagram, LinkedIn und Co. – authentisch und strategisch.</p></article>
+        <article class="card"><span class="num">03</span><h3>Website &amp; Landingpages</h3><p>Texte und Struktur, die Besucherinnen zu Kundinnen machen. Inklusive SEO-Grundlagen.</p></article>
+        <article class="card"><span class="num">04</span><h3>E-Mail-Marketing</h3><p>Newsletter und automatisierte Sequenzen, die Vertrauen aufbauen und verkaufen – auch während du schläfst.</p></article>
+        <article class="card"><span class="num">05</span><h3>Launch-Kampagnen</h3><p>Ob neues Programm, Produkt oder Buch: Wir planen deinen Launch Schritt für Schritt.</p></article>
+        <article class="card"><span class="num">06</span><h3>1:1 Marketing-Mentoring</h3><p>Du willst selbst umsetzen? Dann begleite ich dich mit Feedback, Klarheit und Accountability.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section id="ablauf" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">So arbeiten wir zusammen</span>
+        <h2>Klarer Ablauf, keine Überraschungen.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Kennenlernen</h3><p>30 Minuten kostenlos per Video: Wo stehst du, wo willst du hin?</p></div>
+        <div class="step"><h3>Analyse</h3><p>Ich schaue mir deinen Auftritt, deine Zielgruppe und den Markt genau an.</p></div>
+        <div class="step"><h3>Strategie</h3><p>Du erhältst einen konkreten Plan mit Prioritäten und Zeitplan.</p></div>
+        <div class="step"><h3>Umsetzung</h3><p>Gemeinsam oder für dich – mit regelmäßigem Reporting.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stimmen -->
+  <section id="stimmen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Stimmen</span>
+        <h2>Was Kundinnen sagen</h2>
+      </div>
+      <div class="quotes">
+        <blockquote>
+          <p>„Zum ersten Mal kann ich in einem Satz erklären, was ich anbiete – und die richtigen Menschen melden sich von selbst.“</p>
+          <footer><strong>[Name der Kundin]</strong> · Business-Coachin</footer>
+        </blockquote>
+        <blockquote>
+          <p>„Lena hat unseren Produktlaunch strukturiert, als hätte sie nie etwas anderes gemacht. Ausverkauft in zwei Wochen.“</p>
+          <footer><strong>[Name der Kundin]</strong> · Gründerin, Naturkosmetik</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pakete -->
+  <section id="pakete" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Pakete</span>
+        <h2>Transparente Preise</h2>
+        <p class="lead">Alle Preise zzgl. MwSt. Individuelle Angebote jederzeit möglich.</p>
+      </div>
+      <div class="pricing">
+        <div class="plan">
+          <h3>Klarheits-Session</h3>
+          <div class="price">390 € <small>einmalig</small></div>
+          <ul>
+            <li>90 Min. Strategie-Workshop</li>
+            <li>Analyse deines Auftritts</li>
+            <li>Schriftliche To-do-Liste</li>
+          </ul>
+          <a class="btn btn-ghost" href="#kontakt">Anfragen</a>
+        </div>
+        <div class="plan featured">
+          <h3>Sichtbarkeits-Paket</h3>
+          <div class="price">1.900 € <small>/ 6 Wochen</small></div>
+          <ul>
+            <li>Positionierung &amp; Botschaft</li>
+            <li>Content-Strategie &amp; Redaktionsplan</li>
+            <li>12 fertige Social-Media-Posts</li>
+            <li>Wöchentliche Calls</li>
+          </ul>
+          <a class="btn btn-primary" href="#kontakt">Anfragen</a>
+        </div>
+        <div class="plan">
+          <h3>Marketing-Partnerin</h3>
+          <div class="price">ab 1.200 € <small>/ Monat</small></div>
+          <ul>
+            <li>Laufende Umsetzung</li>
+            <li>Content, Newsletter, Kampagnen</li>
+            <li>Monatliches Reporting</li>
+          </ul>
+          <a class="btn btn-ghost" href="#kontakt">Anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap two-col">
+      <div>
+        <span class="eyebrow">FAQ</span>
+        <h2>Häufige Fragen</h2>
+        <p class="lead">Deine Frage ist nicht dabei? Schreib mir einfach.</p>
+      </div>
+      <div>
+        <details><summary>Arbeitest du nur mit Frauen?</summary><p>Mein Fokus liegt auf Unternehmerinnen und Gründerinnen – meine Methoden und Erfahrungen sind genau darauf ausgerichtet. Sprich mich gerne an, wenn du unsicher bist, ob wir zusammenpassen.</p></details>
+        <details><summary>Ich bin noch ganz am Anfang. Passt das trotzdem?</summary><p>Ja! Gerade in der Gründungsphase legt eine klare Positionierung den Grundstein. Die Klarheits-Session ist dafür ideal.</p></details>
+        <details><summary>Wie schnell sehe ich Ergebnisse?</summary><p>Klarheit gibt es sofort, messbare Effekte bei Reichweite und Anfragen meist nach 6–12 Wochen konsequenter Umsetzung.</p></details>
+        <details><summary>Arbeitest du auch remote?</summary><p>Ja, die Zusammenarbeit läuft komplett online – deutschlandweit und im DACH-Raum.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="contact">
+    <div class="wrap two-col">
+      <div>
+        <span class="eyebrow">Kontakt</span>
+        <h2>Lass uns über dein Business sprechen.</h2>
+        <p class="lead">Buche ein kostenloses, unverbindliches Erstgespräch. Ich melde mich innerhalb von 48 Stunden bei dir.</p>
+        <p>✉️ <a href="mailto:hallo@example.de" style="color:inherit">hallo@example.de</a></p>
+      </div>
+      <form id="contact-form" novalidate>
+        <div class="row">
+          <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div><label for="email">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div><label for="business">Dein Business</label><input id="business" name="business" placeholder="z. B. Coaching, Onlineshop, Praxis …"></div>
+        <div>
+          <label for="interest">Interesse an</label>
+          <select id="interest" name="interest">
+            <option>Klarheits-Session</option>
+            <option>Sichtbarkeits-Paket</option>
+            <option>Marketing-Partnerin</option>
+            <option>Weiß ich noch nicht</option>
+          </select>
+        </div>
+        <div><label for="message">Nachricht</label><textarea id="message" name="message" placeholder="Wo stehst du gerade und wobei kann ich helfen?"></textarea></div>
+        <button class="btn btn-primary" type="submit">Nachricht senden</button>
+        <p class="form-note">Mit dem Absenden stimmst du der Verarbeitung deiner Daten gemäß Datenschutzerklärung zu.</p>
+        <div class="success" id="success" role="status">Danke! Deine Nachricht ist angekommen – ich melde mich bald bei dir.</div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Lena Berger · Marketing für Unternehmerinnen</span>
+    <span><a href="#">Impressum</a><a href="#">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+  // Platzhalter-Formularlogik – für echten Versand z. B. Formspree, Netlify Forms o. Ä. anbinden.
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert('Bitte gib deinen Namen und eine gültige E-Mail-Adresse an.');
+      return;
+    }
+    document.getElementById('success').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html>
