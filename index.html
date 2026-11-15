@@ -11,20 +11,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #faf6f2;
+      --bg: #fffaf4;
       --surface: #ffffff;
-      --ink: #241a16;
-      --muted: #6e615b;
-      --line: #ece2da;
-      --coral: #ff5b3a;
-      --coral-ink: #d93f1f;
-      --peach: #ffe3d5;
-      --blush: #fbe2e1;
-      --apricot: #ffd6b5;
+      --ink: #2b211b;
+      --muted: #75675e;
+      --line: #f1e4d6;
+      --coral: #ec6a10;
+      --coral-ink: #b84f05;
+      --peach: #fff0e2;
+      --blush: #ffe7d1;
+      --apricot: #ffdcb6;
       --on-dark: #faf6f2;
       --radius: 24px;
       --max: 1200px;
-      --hero-grad: linear-gradient(125deg, #ffd3bf 0%, #ffe9dc 40%, #fdf1ec 65%, #f9dcdc 100%);
+      --hero-grad: linear-gradient(125deg, #ffd9b3 0%, #ffead4 35%, #fff6ec 65%, #ffe4c4 100%);
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
@@ -33,13 +33,13 @@
         --ink: #f7efea;
         --muted: #b5a7a0;
         --line: #362a25;
-        --coral: #ff7356;
-        --coral-ink: #ff8f77;
+        --coral: #ff8a3d;
+        --coral-ink: #ffa66b;
         --peach: #3b2319;
         --blush: #3a2125;
         --apricot: #3e2a1b;
         --on-dark: #f7efea;
-        --hero-grad: linear-gradient(125deg, #42200f 0%, #261813 45%, #1d1512 65%, #36191d 100%);
+        --hero-grad: linear-gradient(125deg, #45250c 0%, #281a10 45%, #1d1512 65%, #3a230f 100%);
       }
     }
 
@@ -111,7 +111,7 @@
     .f1 { background: var(--peach); } .f2 { background: var(--blush); } .f3 { background: var(--apricot); }
     .blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); }
     .blob.a { width: 380px; height: 380px; background: var(--coral); top: -60px; right: -80px; opacity: .22; }
-    .blob.b { width: 300px; height: 300px; background: #ff9e7a; top: 260px; right: 220px; opacity: .25; }
+    .blob.b { width: 300px; height: 300px; background: #ffb36b; top: 260px; right: 220px; opacity: .25; }
     @media (max-width: 900px) { .hero-bottom { grid-template-columns: 1fr; } }
     @media (max-width: 520px) { .facts { grid-template-columns: 1fr; } .fact strong { font-size: 1.7rem; } }
 
@@ -141,34 +141,34 @@
     .tile h3 { margin-top: 28px; }
     .tile p { color: var(--muted); margin: 0; font-size: .97rem; }
     .tile.wide { grid-column: span 3; }
-    .tile.dark { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-    .tile.dark p { color: color-mix(in srgb, var(--bg) 72%, transparent); }
-    .tile.dark .ico svg { stroke: #241a16; }
+    .tile.dark { background: var(--blush); color: var(--ink); border-color: transparent; }
+    .tile.dark p { color: var(--muted); }
+    .tile.dark .ico svg { stroke: #2b211b; }
     .tile.coral { background: var(--coral); color: #fff; border-color: var(--coral); }
     .tile.coral p { color: rgba(255,255,255,.88); }
     .tile.coral .ico svg { stroke: #fff; }
-    .bg-peach { background: var(--peach); } .bg-blush { background: var(--blush); } .bg-apricot { background: #ffd6b5; } .bg-white { background: rgba(255,255,255,.22); }
+    .bg-peach { background: var(--peach); } .bg-blush { background: var(--blush); } .bg-apricot { background: #fff; } .bg-white { background: rgba(255,255,255,.25); }
     @media (max-width: 960px) { .bento { grid-template-columns: 1fr 1fr; } .tile, .tile.wide { grid-column: span 1; } }
     @media (max-width: 600px) { .bento { grid-template-columns: 1fr; } .tile { min-height: 0; } }
 
     /* Ablauf */
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .step { border-radius: var(--radius); padding: 28px; background: var(--surface); border: 1px solid var(--line); }
-    .step b { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--bg); font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; margin-bottom: 26px; }
+    .step b { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--coral); color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; margin-bottom: 26px; }
     .step p { color: var(--muted); font-size: .95rem; margin: 0; }
     @media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 
     /* Über mich (immer dunkel) */
-    .about { background: #241a16; color: #faf6f2; border-radius: 40px; margin: 0 16px; }
-    .about p { color: rgba(250,246,242,.74); }
-    .about h2 { color: #faf6f2; }
-    .about .tag { background: transparent; border-color: rgba(250,246,242,.25); color: #faf6f2; }
-    .big-num { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(7rem, 20vw, 15rem); line-height: .8; letter-spacing: -0.06em; color: #ff5b3a; margin: 8px 0 12px; }
+    .about { background: linear-gradient(160deg, var(--peach), var(--blush)); color: var(--ink); border-radius: 40px; margin: 0 16px; }
+    .about p { color: var(--muted); }
+    .about h2 { color: var(--ink); }
+    .about .tag { background: var(--surface); }
+    .big-num { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(7rem, 20vw, 15rem); line-height: .8; letter-spacing: -0.06em; color: var(--coral); margin: 8px 0 12px; }
     .cap { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.5rem; font-weight: 700; }
     .portrait {
       aspect-ratio: 4 / 5; max-width: 240px; border-radius: 28px; margin-top: 40px;
-      background: linear-gradient(150deg, #ff5b3a, #ff8d63 50%, #ffc4a3);
+      background: linear-gradient(150deg, #ec6a10, #ff9d4d 50%, #ffcf9a);
       display: grid; place-items: center; align-content: center; gap: 4px; color: #fff;
       font-family: "Bricolage Grotesque", sans-serif; font-size: 4rem; font-weight: 800;
     }
@@ -177,7 +177,7 @@
 
     /* Region */
     .region { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .map { background: #ffe3d5; border-radius: var(--radius); overflow: hidden; min-height: 340px; position: relative; }
+    .map { background: #ffecd8; border-radius: var(--radius); overflow: hidden; min-height: 340px; position: relative; }
     .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .chip { padding: 8px 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: .9rem; font-weight: 500; }
@@ -201,25 +201,25 @@
     details p { color: var(--muted); margin: 12px 0 0; }
 
     /* Kontakt */
-    .contact-box { background: #ff5b3a; color: #fff; border-radius: 40px; padding: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-    .contact-box h2 { color: #fff; }
-    .contact-box .lead { color: rgba(255,255,255,.9); }
-    .contact-box .tag { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.35); color: #fff; }
-    .contact-box .tag .dot { background: #fff; }
+    .contact-box { background: linear-gradient(135deg, #ffe0bf, #ffc995); color: #2b211b; border-radius: 40px; padding: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .contact-box h2 { color: #2b211b; }
+    .contact-box .lead { color: #5e4a3d; }
+    .contact-box .tag { background: rgba(255,255,255,.6); border-color: rgba(255,255,255,.8); color: #2b211b; }
+    .contact-box .tag .dot { background: #ec6a10; }
     form { display: grid; gap: 14px; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 6px; }
     input, textarea, select {
       width: 100%; padding: 14px 16px; border-radius: 14px; font: inherit; font-size: 1rem;
-      border: 2px solid transparent; background: #fff; color: #241a16; transition: border-color .2s;
+      border: 2px solid rgba(43,33,27,.08); background: #fff; color: #2b211b; transition: border-color .2s;
     }
-    input:focus, textarea:focus, select:focus { border-color: #241a16; outline: none; }
+    input:focus, textarea:focus, select:focus { border-color: #ec6a10; outline: none; }
     textarea { min-height: 120px; resize: vertical; }
-    .contact-box .btn { background: #241a16; color: #fff; justify-self: start; }
-    .contact-box .btn:hover { background: #000; }
-    .contact-box :focus-visible { outline-color: #241a16; }
+    .contact-box .btn { background: #ec6a10; color: #fff; justify-self: start; }
+    .contact-box .btn:hover { background: #b84f05; }
+    .contact-box :focus-visible { outline-color: #2b211b; }
     .form-note { font-size: .82rem; opacity: .9; margin: 0; }
-    .success { display: none; padding: 16px; border-radius: 14px; background: #241a16; color: #fff; font-weight: 500; }
+    .success { display: none; padding: 16px; border-radius: 14px; background: #2b211b; color: #fff; font-weight: 500; }
     .contact-meta { margin-top: 28px; display: grid; gap: 6px; font-weight: 500; }
     @media (max-width: 900px) { .contact-box { grid-template-columns: 1fr; padding: 36px 24px; border-radius: 28px; gap: 32px; } .row { grid-template-columns: 1fr; } }
 
@@ -422,11 +422,11 @@
       </div>
       <div class="map reveal" aria-hidden="true">
         <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice">
-          <g fill="none" stroke="#241a16" stroke-opacity=".12" stroke-width="1.5">
+          <g fill="none" stroke="#2b211b" stroke-opacity=".12" stroke-width="1.5">
             <circle cx="200" cy="160" r="50"/><circle cx="200" cy="160" r="100"/><circle cx="200" cy="160" r="150"/><circle cx="200" cy="160" r="200"/>
           </g>
-          <path d="M-20 215 C 80 175, 140 235, 220 195 S 360 125, 440 155" stroke="#241a16" stroke-opacity=".14" stroke-width="10" fill="none" stroke-linecap="round"/>
-          <g font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#241a16">
+          <path d="M-20 215 C 80 175, 140 235, 220 195 S 360 125, 440 155" stroke="#2b211b" stroke-opacity=".14" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <g font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2b211b">
             <circle cx="70" cy="92" r="5"/><text x="80" y="96">Halle</text>
             <circle cx="132" cy="112" r="4"/><text x="142" y="116">Schkeuditz</text>
             <circle cx="282" cy="118" r="4"/><text x="292" y="122">Taucha</text>
@@ -435,9 +435,9 @@
             <circle cx="320" cy="210" r="4"/><text x="330" y="214">Grimma</text>
             <circle cx="232" cy="290" r="4"/><text x="242" y="294">Borna</text>
           </g>
-          <circle cx="200" cy="160" r="26" fill="#ff5b3a" opacity=".25"/>
-          <circle cx="200" cy="160" r="11" fill="#ff5b3a"/>
-          <text x="200" y="134" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" font-weight="800" fill="#241a16">Leipzig</text>
+          <circle cx="200" cy="160" r="26" fill="#ec6a10" opacity=".25"/>
+          <circle cx="200" cy="160" r="11" fill="#ec6a10"/>
+          <text x="200" y="134" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" font-weight="800" fill="#2b211b">Leipzig</text>
         </svg>
       </div>
     </div>
